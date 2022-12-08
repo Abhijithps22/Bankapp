@@ -62,6 +62,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+          "port": 4200  
+          },
           "configurations": {
             "production": {
               "browserTarget": "bankapp:build:production"
@@ -76,6 +79,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "bankapp:build"
+          
           }
         },
         "test": {
@@ -97,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "43463b7e-4ca5-4763-bd3f-2c172f84f6e7"
   }
 }

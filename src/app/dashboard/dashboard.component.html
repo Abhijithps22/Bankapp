@@ -1,0 +1,67 @@
+<button type="button" value="Logout" class="btn btn-outline-success text-center" (click)="logout()" style="float:right;">
+    Logout
+</button>
+<button type="button" value="Delete" class="btn btn-outline-danger text-center" (click)="delete()" style="float:right;">
+    Delete
+</button>
+<h1>Welcome {{user}}</h1>
+<div class="home"><a routerLink=''>Do you log?</a></div>
+<div class="transaction"><a routerLink="/Transaction">View Transaction</a></div>
+<!-- selector of delete -->
+<app-delete [item]="acno" (onCancel)="oncancel()" (onDelete)="onDelete($event)"></app-delete>
+<!-- string interpolation{{item}}delete.html -->
+<div class="parent" [ngClass]="acno? 'style1':''"> <!-- [ngClass] To display only the data from the delete.html file  -->
+       <!-- <h5>System Date and Time:{{SystemDate}}</h5>    -->
+                <!-- or -->
+       <!-- <h5>System Date and Time:{{SystemDate | date}}</h5>   -->
+       <h5>System Date and Time:{{SystemDate | date: 'short'}}</h5>  <!-- short is used for(/) -->
+ <div class="child" id="a1">
+ <div class="row row-4 text-dark"> 
+    <form [formGroup]="depositform" class="text-center rounded-3"><h1><b>Deposit</b></h1>
+        <img src="../../assets/images/southIndianBank.jpg" alt="image" width="80px" height="80px" class="mt-1 rounded-circle" ><br><br>
+        <div class="text-center">
+<div class="text-center">
+    <input [(ngModel)]="acno" type="text" name="Account number" id="depo_acno" placeholder="Account number" class="form-control w-50 container-fluid"> 
+</div><br>
+<div *ngIf="this.depositform.get('acno')?.errors && this.depositform.get('acno')?.touched" style="color: red;">Invalid data</div><br>
+
+    <div class="text-center">
+    <!-- <input (change)="pswdchange($event)" type="password" name="password" id="login_pswd" placeholder="Password" class="form-control w-50 container-fluid" >  -->
+    <input [(ngModel)]="pswd" type="password" name="password" id="depo_pswd" placeholder="Password" class="form-control w-50 container-fluid" > 
+</div><br>
+<div *ngIf="this.depositform.get('pswd')?.errors && this.depositform.get('pswd')?.touched" style="color: red;">Invalid data</div><br>
+
+ <!-- <input (change)="acnochange($event)" type="text" name="Account number" id="login_acno" [placeholder]="accounts" class="form-control w-50 container-fluid"> -->
+ <input [(ngModel)]="amount" type="text" name="name" id="depo_uname" placeholder="Amount" class="form-control w-50 container-fluid"> 
+</div><br>
+<div *ngIf="this.depositform.get('amount')?.errors && this.depositform.get('amount')?.touched" style="color: red;">Invalid data</div><br>
+    <button type="button" class="btn btn-outline-primary text-center" (click)="deposit()">
+        Deposit
+    </button>
+</form>
+</div>
+      <div class="child" id="a2">
+        <div class="row row-4 text-dark "> 
+          <form [formGroup]="withdrawform" class="text-center rounded-3 "><h1><b>Withdraw</b></h1>
+              <img src="../../assets/images/southIndianBank.jpg" alt="image" width="80px" height="80px" class="mt-1 rounded-circle" ><br><br>
+              <div class="text-center">
+      <div class="text-center">
+          <input formControlName="acno" type="text" name="Account number" id="with_acno" placeholder="Account number" class="form-control w-50 container-fluid"> 
+      </div><br>
+      <div *ngIf="this.withdrawform.get('acno')?.errors && this.withdrawform.get('acno')?.touched" style="color: red;">Invalid data</div><br>
+          <div class="text-center">
+          <!-- <input (change)="pswdchange($event)" type="password" name="password" id="login_pswd" placeholder="Password" class="form-control w-50 container-fluid" >  -->
+          <input formControlName="pswd" type="password" name="password" id="with_pswd" placeholder="Password" class="form-control w-50 container-fluid" > 
+      </div><br>
+      <div *ngIf="this.withdrawform.get('pswd')?.errors && this.depositform.get('pswd')?.touched" style="color: red;">Invalid data</div><br>
+       <!-- <input (change)="acnochange($event)" type="text" name="Account number" id="login_acno" [placeholder]="accounts" class="form-control w-50 container-fluid"> -->
+       <input formControlName="amount" type="text" name="name" id="with_uname" placeholder="Amount" class="form-control w-50 container-fluid"> 
+      </div><br>
+      <div *ngIf="this.withdrawform.get('amount')?.errors && this.withdrawform.get('amount')?.touched" style="color: red;">Invalid data</div><br>
+          <button type="button" class="btn btn-outline-primary text-center" (click)="withdraw()">
+              withdraw
+          </button>
+      </form>
+      </div>     
+</div>
+</div>

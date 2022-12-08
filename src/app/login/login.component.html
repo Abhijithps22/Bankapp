@@ -1,0 +1,31 @@
+<div class="row col-4 text-dark mt-5"> 
+    <form [formGroup]="loginform" class="mt-5 text-center rounded-3"><h1><b>My Bank</b></h1>
+        <img src="../../assets/images/southIndianBank.jpg" alt="image" width="80px" height="80px" class="mt-1 rounded-circle" ><br><br>
+       <div style="color: blue;"><h6><b>{{aim}}</b></h6></div> 
+        <div class="text-center">
+    <!-- <input (change)="acnochange($event)" type="text" name="Account number" id="login_acno" [placeholder]="accounts" class="form-control w-50 container-fluid"> -->
+    <!-- <input [(ngModel)]="acno" type="text" name="Account number" id="login_acno" [placeholder]="accounts" class="form-control w-50 container-fluid"> 
+</div><br> -->
+<input formControlName="acno" type="text" name="Account number" id="login_acno" [placeholder]="accounts" class="form-control w-50 container-fluid"> 
+</div>
+<div *ngIf="this.loginform.get('acno')?.errors && this.loginform.get('acno')?.touched" style="color: red;">Invalid data</div><br>
+    <div class="text-center">
+    <!-- <input (change)="pswdchange($event)" type="password" name="password" id="login_pswd" placeholder="Password" class="form-control w-50 container-fluid" >  -->
+    <!-- <input [(ngModel)]="pswd" type="password" name="password" id="login_pswd" placeholder="Password" class="form-control w-50 container-fluid" > 
+</div><br> -->
+<input formControlName="pswd" type="password" name="password" id="login_pswd" placeholder="Password" class="form-control w-50 container-fluid" > 
+</div>
+<div *ngIf="this.loginform.get('pswd')?.errors && this.loginform.get('pswd')?.touched" style="color: red;">Invalid data</div><br>
+     <button type="button" class="btn btn-outline-danger text-center" (click)="login()">
+        Login
+    </button>
+    <div><br>
+        <a href="" class="forgot__pass text-center p-3">Forgot password?</a>
+    </div>
+    <div>
+        <a routerLink="register" class="sign___up text-center p-3">sign up</a>
+    </div> 
+</form>
+</div>
+<div id="mymove" class="rounded-3"><h1><i>Ad on Loan</i></h1></div>
+

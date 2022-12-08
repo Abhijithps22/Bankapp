@@ -1,0 +1,19 @@
+form{
+    background-image: url(../../assets/images/collage-with-businessman-word-banking-and-financial-pictograms-on-dark-background-2BGP341.jpg);
+    background-position: auto;
+    background-repeat: no-repeat;
+    width: 400px;
+    height:450px;
+    padding: 2px 4px 6px;
+}
+#a1{
+    margin-top: 50px;
+    margin-left: 180px;
+}
+#a2{
+    margin-left: 550px;
+    margin-top: -445px;
+}
+.style1{
+    opacity: 0;
+}

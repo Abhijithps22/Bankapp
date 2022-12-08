@@ -1,0 +1,76 @@
+Data binding
+(share data inside component)(html-ts)
+
+1.one way binding()  - data sharing only one direction
+ ts-component(typescript file)
+ html-view(show)
+
+ 1.1 component to view( ts file is moved to html)
+    a)string interpolation -{{expression}}
+    b)property binding - [attribute_name]="property"
+
+ 1.2 view to component(html to ts file)
+    a)event binding-(event_name)="function_name()"    
+    b)event binding using $event-(event_name)="function_name($event)"
+    c)event binding using template refernce varaible -#varaible_name
+
+2.Two way binding
+   [(ngModel)]="property name"
+
+
+Angular Routing
+   To set path for a component
+   {
+      path='value',component:class name;
+   }
+
+1.Dependency injection
+----------------------
+Two share data between two dependent class.
+
+2.Angular service
+------------------
+To hold redundant data(Duplicate data).
+(ng g s service_name).   // The command for service.
+
+3.Angular directives
+---------------------
+   To manipulate DOM-- To make change in html pages
+
+a)component directives
+
+b)structural directives
+
+   1)ngFor
+   2)ngIf
+   3)ngClass
+
+4.Angular forms
+----------------
+a)Template driven forms-To design html page(first design html page)
+
+b)Model driven form-(first design ts file to html page).
+   1)Reactive FormsModule
+   formGroup,array,control-----(add advanced validations)(import reactive )
+
+1.)Localstorage has:
+   -getitem;
+   -setitem;
+   -removeitem.
+
+parent child relationship:
+   1)parent to child - @Input.
+   2)child to parent - @Output.
+
+Angular pip
+------------
+
+    {{value-expression |date [:format[timezone]]}}
+   
+RxJs-Reactive Extension for javascript(To solve asynchronous angular request)
+1)Observable(ts)-.subscribe(resolve) ,  catch(reject)
+2)Alternative of promise(js)-.then(resolve) , catch(reject)
+
+angular built (dist)
+npm i -g http-server
+http-server
